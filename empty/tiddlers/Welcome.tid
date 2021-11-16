@@ -1,0 +1,12 @@
+created: 20211116161806738
+modified: 20211116162421039
+title: Welcome
+type: text/x-markdown
+
+# Welcome
+
+You can use ~MarkDown in this wiki to embed local files in the `files` subfolder of the wiki:
+`![Motovun Jack](Motovun_Jack.svg)` becomes:
+![Motovun Jack](Motovun_Jack.svg)
+
+{{GettingStarted}}
