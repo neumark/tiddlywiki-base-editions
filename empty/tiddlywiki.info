@@ -1,7 +1,7 @@
 {
     "description": "Empty wiki",
     "includeWikis": [
-		{"path": "../base", "read-only": true}
+		{"path": "../tiddlydesktop-base", "read-only": true}
 	],
     "config": {
 		"retain-original-tiddler-path": true
