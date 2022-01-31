@@ -19,11 +19,11 @@ exports.params = [
 
 const imagePostfixes = ['.jpg', '.jpeg', '.png', '.gif', '.heic', '.svg'];
 const videoPostfixes = ['.mp4', '.mov'];
-
-const pathPrefix = [ ...(new URLSearchParams(window.location.search))].find(([k, v]) => k === 'pathname')[1];	
+const isHeadlessNode = globalThis.window === undefined;
+const pathPrefix = isHeadlessNode ? undefined : ([ ...(new URLSearchParams(window.location.search))].find(([k, v]) => k === 'pathname') ?? [])[1];
 
 exports.run = function(relpath, title) {
-	const url = `file://${pathPrefix}/files/${relpath}`;
+	const url = `${pathPrefix ? `file://${pathPrefix}` : '.'}/files/${relpath}`;
 	const isImage = imagePostfixes.some(postfix => relpath.toLowerCase().endsWith(postfix))
 	const isVideo = videoPostfixes.some(postfix => relpath.toLowerCase().endsWith(postfix))
 	if (isImage) {
