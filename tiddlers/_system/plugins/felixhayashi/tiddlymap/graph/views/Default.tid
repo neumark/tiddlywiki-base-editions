@@ -1,0 +1,4 @@
+config.background_image: Hungary_physical_map.svg
+config.physics_mode: false
+isview: true
+title: $:/plugins/felixhayashi/tiddlymap/graph/views/Default
