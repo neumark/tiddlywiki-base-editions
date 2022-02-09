@@ -30,11 +30,11 @@ JsContextWidget.prototype.render = function(parent,nextSibling) {
 Compute the internal state of the widget
 */
 JsContextWidget.prototype.execute = function() {
-    const filename = this.getAttribute("filename","anonymous");
+    const filename = this.getAttribute("filename","anonymous.js");
     const outputVar = this.getAttribute("output","result");
     const context = this;
     const exports = {};
-    const code = `exports.result = ${this.getAttribute("code", "null")};`
+    const code = `${this.getAttribute("prelude", "")};\nexports.result = ${this.getAttribute("code", "null")};`
     $tw.utils.evalGlobal(code, {context, exports}, filename);
     this.setVariable(outputVar, exports.result);
 	// Construct the child widgets
