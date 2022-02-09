@@ -52,7 +52,6 @@ Calendar.prototype.execute = function() {
 	//Get widget attributes.
 	var thisMonth = this.getAttribute("month",-1);
 	var thisYear = this.getAttribute("year",-1);
-	var thisDay = this.getAttribute("day",-1);
 	var thisDayMacro = this.getAttribute("day_macro","CalendarListDailyThings");
 	var thisCalendarCSS = this.getAttribute("class", "calendar-table");
 
@@ -145,18 +144,20 @@ Calendar.prototype.execute = function() {
 		//Get the first of the month to base everything else off of.
 		var firstDate = new Date(thisYear,thisMonthNum-1,1);
 		var startingDay = firstDate.getDay() - 1; // -1 because week starts on Monday
+        var todaysDate = new Date().toISOString().split('T')[0]
 		
 		//Make the first week, adding empty days to the front as needed.
 		var currentDate = 1;
 		calendarString = "<table><tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></tr>";
 		while(currentDate <= numDays) {
 			calendarString = calendarString + "<tr>";
+            const paddedMonth = pad(thisMonthNum);
 			for(var i = 0; i < 7; i++) {
                 const paddedDay = pad(currentDate);
 				if(currentDate === 1 && i < startingDay) {
 					calendarString = calendarString + "<td></td>";
 				} else if(currentDate <= numDays) {
-					calendarString = calendarString + `<td ${paddedDay === thisDay ? 'class="current-day"' : ""}><$macrocall $name=${thisDayMacro} day=${currentDate} date=${thisYear}-${pad(thisMonthNum)}-${paddedDay} /></td>`;
+					calendarString = calendarString + `<td ${todaysDate === `${thisYear}-${paddedMonth}-${paddedDay}`? 'class="current-day"' : ""}><$macrocall $name=${thisDayMacro} year=${thisYear} month=${paddedMonth} day=${paddedDay} /></td>`;
 					currentDate++;
 				} if(currentDate > numDays && i < 6) {
 					calendarString = calendarString + "<td></td>";
