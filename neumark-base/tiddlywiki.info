@@ -1,0 +1,10 @@
+{
+    "description": "Neumark base",
+    "plugins": [
+        "tiddlywiki/markdown"
+    ],
+    "themes": [
+    ],
+    "build": {
+    }
+}

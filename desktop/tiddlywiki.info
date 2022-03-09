@@ -1,5 +1,9 @@
 {
-    "description": "Empty edition",
+    "description": "Desktop edition",
+    "includeWikis": [],
+    "config": {
+		"retain-original-tiddler-path": true
+	},
     "plugins": [
         "tiddlywiki/filesystem",
         "tiddlywiki/markdown",

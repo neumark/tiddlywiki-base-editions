@@ -1,3 +1,9 @@
+/*\
+module-type: widget
+title: $:/plugins/neumark/js.js
+type: application/javascript
+\*/
+
 (function(){
 
 /*jslint node: true, browser: true */
