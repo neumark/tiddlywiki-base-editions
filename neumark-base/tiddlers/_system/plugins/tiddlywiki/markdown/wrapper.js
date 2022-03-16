@@ -153,16 +153,13 @@ function convertNodes(remarkableTree, isStartOfInline) {
 				// for local images, output a <<localfile>> macro call
 				out.push({
 					"type": "macrocall",
-	        "name": "localfile",
-  	      "params": [
-            {
-                "value": currentNode.src
-            },
-						{
-                "value": currentNode.alt
-            }
-        	]
-				});
+	                "name": "localfile",
+  	                "params": [
+                        {"value": currentNode.src},
+						{"value": currentNode.alt},
+                        {"value": currentNode.title}
+                    ]
+                });
 			}
 		} else if (currentNode.type === "softbreak") {
 			out.push({
