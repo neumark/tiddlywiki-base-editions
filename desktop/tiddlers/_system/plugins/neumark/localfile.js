@@ -1,6 +1,6 @@
 /*\
 module-type: macro
-tags: 
+tags:
 title: $:/plugins/neumark/localfile.js
 type: application/javascript
 
@@ -20,7 +20,7 @@ exports.name = "localfile";
 
 exports.params = [
 	// (mandatory) path param
-	{name: "relpath"},
+	{name: "src"},
 	// optional parameter
 	{name: "alt"},
 	// optional parameter
@@ -40,15 +40,15 @@ if (globalThis.window) { // if not running under headless node
     pathPrefix += fileLocation ? `/${fileLocation}` : '';
 }
 
-exports.run = function(relpath, alt, title) {
+exports.run = function(src, alt, title) {
     // the argument naming is a little weird
     // alt and title are standard img attributes.
     // The markdown syntax is ![alt](url "title").
     // Since we don't actually use title for anything (the tooltip is alt), we can
     // indicate that it's a download link.
-    const url = `file://${pathPrefix}/${relpath}`;
-    const isImage = imagePostfixes.some(postfix => relpath.toLowerCase().endsWith(postfix))
-    const isVideo = videoPostfixes.some(postfix => relpath.toLowerCase().endsWith(postfix))
+    const url = `file://${pathPrefix}/${src}`;
+    const isImage = imagePostfixes.some(postfix => src.toLowerCase().endsWith(postfix))
+    const isVideo = videoPostfixes.some(postfix => src.toLowerCase().endsWith(postfix))
     if (title === "download") {
         return `<a href="${url}" title="${alt}" download>${alt}</a>`;
     }
