@@ -141,26 +141,14 @@ function convertNodes(remarkableTree, isStartOfInline) {
 			});
 		} else if (currentNode.type === "image") {
 			// for links to images hosted via HTTP, output an img macro
-			if (currentNode.src.match("^https?://.*$")) {
-				out.push({
-					type: "image",
-					attributes: {
-						tooltip: { type: "string", value: currentNode.alt },
-						source: { type: "string", value: currentNode.src }
-					}
-				});				
-			} else {
-				// for local images, output a <<localfile>> macro call
-				out.push({
-					"type": "macrocall",
-	                "name": "localfile",
-  	                "params": [
-                        {"value": currentNode.src},
-						{"value": currentNode.alt},
-                        {"value": currentNode.title}
-                    ]
-                });
-			}
+            out.push({
+                        "type": "EmbedURL",
+                        "attributes": {
+                            "src": { type: "string", value: currentNode.src},
+                            "description": { type: "string", value: currentNode.alt},
+                            "type": { type: "string", value: currentNode.title}
+                        }
+                     });
 		} else if (currentNode.type === "softbreak") {
 			out.push({
 				type: "element",
