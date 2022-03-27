@@ -1,0 +1,7 @@
+{
+    "title": "$:/plugins/tiddlybase/adaptors-lib",
+    "name": "adaptors-lib",
+    "description": "Small js libs which can be overridden in different environments",
+    "contributor": "Peter Neumark",
+    "list": []
+}
