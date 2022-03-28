@@ -1,0 +1,6 @@
+title: $:/fonts/fa
+tags: $:/tags/Macro
+
+\define fa(icon)
+<i class="fa fa-$icon$" aria-hidden="true"></i>
+\end
