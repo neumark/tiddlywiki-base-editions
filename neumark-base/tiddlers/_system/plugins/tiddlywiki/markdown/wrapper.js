@@ -146,7 +146,7 @@ function convertNodes(remarkableTree, isStartOfInline) {
                         "attributes": {
                             "src": { type: "string", value: currentNode.src},
                             "description": { type: "string", value: currentNode.alt},
-                            "type": { type: "string", value: currentNode.title}
+                            "attributes": { type: "string", value: currentNode.title}
                         }
                      });
 		} else if (currentNode.type === "softbreak") {
