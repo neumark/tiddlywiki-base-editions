@@ -1,3 +1,7 @@
 div.embed-inline-link-container {
     display:inline;
 }
+
+i.prefix-icon {
+    padding-right: 0.25em;
+}
