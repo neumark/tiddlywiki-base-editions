@@ -1,0 +1,28 @@
+title: $:/plugins/tiddlybase/react/init-dom-removal-detector.js
+type: application/javascript
+module-type: startup
+
+// install dom-removal-detector if not installed yet, because this is the
+// mechanism react-base-widget relies on for the react root to be unmounted.
+// NOTE: this is a .tid file because webpack erronously tried to compile it when
+// it was .js.
+
+(function () {
+  /*global $tw: false */
+  'use strict';
+
+  // Export name and synchronous status
+  exports.name = 'react-init-dom-removal-detector';
+  exports.after = ['load-modules'];
+  exports.synchronous = true;
+  exports.platforms = ['browser'];
+
+  exports.startup = function () {
+    const removalDetector = require('$:/plugins/tiddlybase/tiddlybase-utils/dom-removal-detector.js');
+    if (!removalDetector.isInstalled()) {
+      console.log("init dom removal detector");
+      removalDetector.install(window.document);
+    }
+  };
+
+})();

@@ -1,0 +1,28 @@
+title: $:/plugins/tiddlybase/mdx/register-mdx-parser.js
+type: application/javascript
+module-type: parser
+
+// registers the MDX parser
+
+(function () {
+  /*global $tw: false */
+  'use strict';
+
+  console.log('register-mdx-parser');
+
+  const MDXParser = function(type, text, options) {
+    this.tree = [
+      {
+          "type": "MDX",
+          attributes: {
+              "mdx": { type: "string", value: text }
+          }
+      }
+    ]
+  };
+
+  if (require("$:/plugins/tiddlybase/tiddlybase-utils/wiki-info-config.js").getWikiInfoConfigValue('parse-markdown-as-mdx') === true) {
+    exports["text/x-markdown"] = MDXParser;
+  }
+
+})();
