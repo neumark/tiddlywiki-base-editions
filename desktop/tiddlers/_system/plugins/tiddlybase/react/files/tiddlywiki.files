@@ -8,6 +8,16 @@
 				"module-type": "library"
 			}
 		},
+        {
+			"file": "react-jsx-runtime.js",
+			"fields": {
+				"type": "application/javascript",
+				"title": "$:/plugins/tiddlybase/react/react-jsx-runtime.js",
+				"module-type": "library"
+			},
+           	"prefix": "(function(realRequire) {var require = function(m) {if(m===\"react\"){m = \"$:/plugins/tiddlybase/react/react.js\"};return realRequire(m);};",
+			"suffix": "})(require);\n"
+		},
 		{
 			"file": "react-dom.js",
 			"fields": {

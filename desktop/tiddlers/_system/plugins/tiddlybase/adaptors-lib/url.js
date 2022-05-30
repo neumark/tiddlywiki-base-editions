@@ -1,8 +1,0 @@
-/*\
-module-type: library
-title: $:/plugins/tiddlybase/adaptors-lib/url.js
-type: application/javascript
-\*/
-
-(()=>{"use strict";var e={d:(t,r)=>{for(var o in r)e.o(r,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:r[o]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};e.r(t),e.d(t,{getExtension:()=>a,getParentURL:()=>i,resolveURL:()=>l});const r=require("$:/plugins/tiddlybase/adaptors-lib/wiki-info-config.js"),o="files",i=()=>$tw?.tiddlybase?.parentLocation?.href,a=e=>{const t=new URL(e,"http://www.example.com").pathname.split(".");if(0!==t.length)return t.slice(-1)[0].toLowerCase()},n=(0,r.getWikiInfoConfigValue)("default-storage-prefix")??"",s=(()=>{if($tw?.desktop){let e=([...new URLSearchParams(window.location.search)].find((([e,t])=>"pathname"===e))??[])[1];const t=(0,r.getWikiInfoConfigValue)("default-file-location");return e+=t?`/${t}`:"",e}})(),l=e=>{return(e=>{const t=e.toLowerCase().trim();return t.startsWith("http://")||t.startsWith("https://")||t.startsWith("//")})(e)?e:e.startsWith(o)?(t=e,$tw?.tiddlybase?.inSandboxedIframe&&$tw?.tiddlybase?.parentClient?$tw.tiddlybase.parentClient("getDownloadURL",[`${n}${t.substring(o.length)}`]):$tw?.desktop?`file://${s}/${t}`:t):(i()??"")+e;var t};var d=exports;for(var f in t)d[f]=t[f];t.__esModule&&Object.defineProperty(d,"__esModule",{value:!0})})();
-//# sourceMappingURL=/sourcemaps/url.js.map
