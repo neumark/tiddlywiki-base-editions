@@ -6,7 +6,6 @@
 	},
     "plugins": [
         "tiddlywiki/filesystem",
-        "tiddlywiki/markdown",
         "tiddlywiki/highlight",
         "tiddlywiki/internals",
         "tiddlywiki/codemirror",

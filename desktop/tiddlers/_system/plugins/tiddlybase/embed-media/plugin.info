@@ -1,0 +1,7 @@
+{
+    "title": "$:/plugins/tiddlybase/embed-media",
+    "name": "embed-media",
+    "description": "Load files from firebase storage",
+    "contributor": "Peter Neumark",
+    "list": []
+}

@@ -1,0 +1,8 @@
+/*\
+module-type: library
+title: $:/plugins/tiddlybase/react/tiddler-removal-detector.js
+type: application/javascript
+\*/
+
+(()=>{"use strict";var e={251:(e,t,o)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.install=t.isInstalled=t.unmonitorRemoval=t.monitorRemoval=void 0;const l=o(84);let n=!1,r={};t.monitorRemoval=(e,t)=>{console.log(`monitoring ${e} for removal`),r[e]=(r[e]??[]).concat(t)};t.unmonitorRemoval=e=>{delete r[e]};t.isInstalled=()=>n;const s=(e,o)=>{console.log("dispatching removal event for",e);for(let l of e){for(let e of r[l]??[])e(o);(0,t.unmonitorRemoval)(l)}};t.install=()=>{if((0,t.isInstalled)())return void console.log("already installed, doing nothing");const e=(0,l.findNavigator)();if(e){console.log("removal detector: install()");const t=e.eventListeners["tm-close-all-tiddlers"];e.addEventListener("tm-close-all-tiddlers",(function(e){return s(Object.keys(r),e),t?.call(this,e),!0}));const o=e.eventListeners["tm-close-tiddler"];e.addEventListener("tm-close-tiddler",(function(e){return s([e.tiddlerTitle],e),o?.call(this,e),!0}));const l=e.eventListeners["tm-close-other-tiddlers"];e.addEventListener("tm-close-other-tiddlers",(function(e){return s(Object.keys(r).filter((t=>t!==e.tiddlerTitle)),e),l?.call(this,e),!0})),n=!0}}},84:e=>{e.exports=require("$:/plugins/tiddlybase/tiddlybase-utils/navigator.js")}},t={};var o=function o(l){var n=t[l];if(void 0!==n)return n.exports;var r=t[l]={exports:{}};return e[l](r,r.exports,o),r.exports}(251),l=exports;for(var n in o)l[n]=o[n];o.__esModule&&Object.defineProperty(l,"__esModule",{value:!0})})();
+//# sourceMappingURL=/sourcemaps/plugins/tiddlybase/react/tiddler-removal-detector.js.map
