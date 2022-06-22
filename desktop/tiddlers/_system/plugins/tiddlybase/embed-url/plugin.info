@@ -1,7 +1,0 @@
-{
-    "title": "$:/plugins/tiddlybase/embed-url",
-    "name": "embed-url",
-    "description": "Load files from firebase storage",
-    "contributor": "Peter Neumark",
-    "list": []
-}
