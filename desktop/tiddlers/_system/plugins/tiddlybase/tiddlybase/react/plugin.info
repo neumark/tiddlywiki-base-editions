@@ -1,0 +1,7 @@
+{
+    "title": "$:/plugins/tiddlybase/react",
+    "name": "react",
+    "description": "React UMD modules packaged as a tiddlywiki plugin",
+    "contributor": "Peter Neumark",
+    "list": []
+}

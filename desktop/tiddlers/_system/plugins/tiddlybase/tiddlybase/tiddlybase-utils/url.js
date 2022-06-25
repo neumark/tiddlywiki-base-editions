@@ -1,0 +1,8 @@
+/*\
+module-type: library
+title: $:/plugins/tiddlybase/tiddlybase-utils/url.js
+type: application/javascript
+\*/
+
+(()=>{"use strict";var e={753:(e,t,r)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.resolveURL=t.getExtension=t.getParentURL=void 0;const i=r(625),n=(0,i.getWikiInfoConfigValue)("external-url-path-prefix")??"",o=(0,i.getWikiInfoConfigValue)("default-storage-prefix"),a=(0,i.getWikiInfoConfigValue)("default-file-location"),s=e=>e&&e.replace(/^[\/]+/,"").replace(/[\/]+$/,""),l=(...e)=>e.map(s).filter((e=>e&&e?.length>0)).join("/");t.getParentURL=()=>$tw?.tiddlybase?.parentLocation?.href;t.getExtension=e=>{const t=new URL(e,"http://www.example.com").pathname;if(t.indexOf(".")<0)return;const r=t.split(".");return 0!==r.length?r.slice(-1)[0].toLowerCase():void 0};const d=(()=>{if($tw?.desktop){let e=([...new URLSearchParams(window.location.search)].find((([e,t])=>"pathname"===e))??[])[1];return l(e,a)}return""})(),p=e=>$tw?.tiddlybase?.inSandboxedIframe&&$tw?.tiddlybase?.parentClient?$tw.tiddlybase.parentClient("getDownloadURL",[l(o,e)]):$tw?.desktop?`file:///${l(d,e)}`:(e=>l(a,e))(e);t.resolveURL=e=>(e=>{const t=e.toLowerCase().trim();return t.startsWith("http://")||t.startsWith("https://")||t.startsWith("//")})(e)?e:e.startsWith(n)?p(e.substring(n.length)):((0,t.getParentURL)()??"")+e},625:e=>{e.exports=require("$:/plugins/tiddlybase/tiddlybase-utils/wiki-info-config.js")}},t={};var r=function r(i){var n=t[i];if(void 0!==n)return n.exports;var o=t[i]={exports:{}};return e[i](o,o.exports,r),o.exports}(753),i=exports;for(var n in r)i[n]=r[n];r.__esModule&&Object.defineProperty(i,"__esModule",{value:!0})})();
+//# sourceMappingURL=/sourcemaps/plugins/tiddlybase/tiddlybase-utils/url.js.map

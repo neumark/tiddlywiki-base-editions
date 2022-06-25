@@ -1,0 +1,7 @@
+{
+    "title": "$:/plugins/tiddlybase/browser-test-utils",
+    "name": "browser-test-utils",
+    "description": "Utilities to make testing easier",
+    "contributor": "Peter Neumark",
+    "list": []
+}

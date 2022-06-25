@@ -1,0 +1,14 @@
+{
+	"tiddlers": [
+		{
+			"file": "mdx-client.js",
+			"fields": {
+				"type": "application/javascript",
+				"title": "$:/plugins/tiddlybase/mdx/mdx-client.js",
+				"module-type": "library"
+			},
+           	"prefix": "(function(realRequire) {var require = function(m) {if(m===\"react\"){m = \"$:/plugins/tiddlybase/react/react.js\"};if(m===\"react-dom/client\"){m = \"$:/plugins/tiddlybase/react/react-dom.js\"};if(m===\"react/jsx-runtime\"){m = \"$:/plugins/tiddlybase/react/react-jsx-runtime.js\"};if(['process','url','path'].includes(m)){return {cwd: () => '/'};};return realRequire(m);};",
+			"suffix": "})(require);\n"
+		}
+	]
+}
