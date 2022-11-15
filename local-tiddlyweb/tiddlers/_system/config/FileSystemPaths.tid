@@ -1,0 +1,11 @@
+created: 20190810124852335
+modified: 20190810125333352
+tags: 
+title: $:/config/FileSystemPaths
+type: text/vnd.tiddlywiki
+
+[is[system]!has[draft.of]removeprefix[$:/]addprefix[_system/]]
+[is[draft]search-replace:g:regexp[/|\\],[_]addprefix[drafts/]]
+[is[binary]search-replace:g:regexp[\*],[_]addprefix[resources/]]
+[is[image]search-replace:g:regexp[\*],[_]addprefix[resources/]]
+[is[tiddler]search-replace:g:regexp[\*],[_]]

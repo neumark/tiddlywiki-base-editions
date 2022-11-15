@@ -1,0 +1,11 @@
+{
+    "description": "Desktop edition",
+    "includeWikis": [],
+    "config": {
+	},
+    "plugins": [
+    ],
+    "themes": [
+    ],
+    "build": { }
+}
