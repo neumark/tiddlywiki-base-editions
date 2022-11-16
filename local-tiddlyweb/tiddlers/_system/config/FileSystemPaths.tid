@@ -4,8 +4,9 @@ tags:
 title: $:/config/FileSystemPaths
 type: text/vnd.tiddlywiki
 
-[is[system]!has[draft.of]removeprefix[$:/]addprefix[_system/]]
-[is[draft]search-replace:g:regexp[/|\\],[_]addprefix[drafts/]]
-[is[binary]search-replace:g:regexp[\*],[_]addprefix[resources/]]
-[is[image]search-replace:g:regexp[\*],[_]addprefix[resources/]]
-[is[tiddler]search-replace:g:regexp[\*],[_]]
+[is[system]!has[draft.of]removeprefix[$:/]search-replace:g:regexp[/|\\|\<|\>|~|:|\"|\'|\||\?|\*|\^],[_]addprefix[_system/]]
+[is[draft]search-replace:g:regexp[/|\\|\<|\>|~|:|\"|\'|\||\?|\*|\^],[_]addprefix[drafts/]]
+[is[binary]trim:prefix[/]search-replace:g:regexp[\\|\<|\>|~|:|\"|\'|\||\?|\*|\^],[_]addprefix[resources/]]
+[is[image]trim:prefix[/]search-replace:g:regexp[\\|\<|\>|~|:|\"|\'|\||\?|\*|\^],[_]addprefix[resources/]]
+[type[text/x-markdown]trim:prefix[/]search-replace:g:regexp[\\|\<|\>|~|:|\"|\'|\||\?|\*|\^],[_]addprefix[mdx/]]
+[is[tiddler]trim:prefix[/]search-replace:g:regexp[\\|\<|\>|~|:|\"|\'|\||\?|\*|\^],[_]]
